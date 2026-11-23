@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sorriso Prime Odontologia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calmo, limpo, acolhedor — tira o medo do dentista
+   IDEA: o cartão de consulta da clínica, branco e organizado
+   PICTURE: um dente grande e brilhante com escova e fio, em camadas suaves
+   COLOUR and TYPE: branco, azul-profundo e coral; Plus Jakarta Sans
+   LAYOUT: nav, cena, tratamentos, agendamento de avaliação, equipe, convênios, dúvidas, horários, rodapé */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0b1a2b);--soft:light-dark(#eef4fb,#12263d);--ink:light-dark(#0d2540,#e9f1fa);--mute:light-dark(#4f6378,#a7b8ca);--line:light-dark(#d9e4f0,#24405e);--blue:light-dark(#0d3b66,#7fb3e8);--blueBg:#0d3b66;--coral:#ff6b57;--card:light-dark(#ffffff,#0f2236)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Plus Jakarta Sans",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2{font-weight:800;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(36px,5.6vw,56px)}
+h2{font-size:clamp(28px,3.8vw,40px);margin-bottom:8px}
+h3{margin:0;font-size:18px}
+.band{padding:clamp(36px,5vw,76px) max(5vw,16px)}
+.wrap{max-width:1180px;margin:0 auto}
+.lead{color:var(--mute);max-width:60ch;margin:0 0 28px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:14px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;text-decoration:none;color:var(--blue)}
+.brand svg{width:30px;height:30px}
+.links{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.links a{text-decoration:none;padding:10px 12px;border-radius:8px;color:var(--mute);font-weight:500}
+.links a:hover{background:var(--soft);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:12px;border:0;background:var(--coral);color:#fff;font:700 16px "Plus Jakarta Sans",sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.06)}
+.btn.ghost{background:transparent;border:2px solid var(--line);color:var(--ink)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+.hero{background:var(--soft)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero p{font-size:18px;color:var(--mute);max-width:46ch;margin:18px 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;font-size:14px;color:var(--mute)}
+.trust b{display:block;font-size:22px;color:var(--ink)}
+.scene{width:100%;height:auto;display:block}
+.spark{animation:tw 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.spark:nth-of-type(2){animation-delay:.9s}.spark:nth-of-type(3){animation-delay:1.7s}
+@keyframes tw{0%,100%{transform:scale(.5);opacity:.3}50%{transform:scale(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){.spark{animation:none}html{scroll-behavior:auto}}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card p{margin:6px 0 0;color:var(--mute);font-size:15px}
+.ico{width:48px;height:48px;border-radius:14px;background:var(--soft);display:grid;place-items:center;margin-bottom:14px}
+.ico svg{width:28px;height:28px}
+.book{background:var(--blueBg);color:#fff}
+.book .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.book .lead{color:#c3d6ea}
+.book ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.book li{display:flex;gap:12px;align-items:flex-start;color:#dbe7f3}
+.book li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--coral) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12l4 4 8-8' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E") center/14px no-repeat}
+form,.done{background:#fff;color:#0d2540;border-radius:18px;padding:24px;display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:700;font-size:14px}
+input,select{font:16px "Plus Jakarta Sans",sans-serif;min-height:48px;padding:0 14px;border-radius:12px;border:1.5px solid #d9e4f0;background:#fff;color:#0d2540;width:100%}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{min-height:44px;padding:0 16px;border-radius:99px;border:1.5px solid #d9e4f0;background:#fff;font:600 15px "Plus Jakarta Sans",sans-serif;color:#0d2540;cursor:pointer}
+.chips button[aria-pressed=true]{background:#0d3b66;border-color:#0d3b66;color:#fff}
+.err{color:#c62f1e;font-size:14px;font-weight:700;min-height:1em;margin:0}
+.done{display:none}.done.show{display:grid}
+.done p{margin:0;color:#4f6378}
+.team .card{display:flex;gap:16px;align-items:center}
+.team svg{flex:none;width:64px;height:64px}
+.team small{display:block;color:var(--mute);font-size:13px}
+.plans{display:flex;flex-wrap:wrap;gap:10px}
+.plans span{padding:10px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:600}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;line-height:1;color:var(--coral)}
+details[open] summary::after{content:"−"}
+details p{margin:0 0 18px;color:var(--mute);max-width:70ch}
+.two{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.hours{list-style:none;padding:0;margin:0}
+.hours li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.hours li.today{font-weight:800;color:var(--blue)}
+.hours span:last-child{white-space:nowrap}
+footer{border-top:1px solid var(--line);padding:26px max(5vw,16px);color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.float{position:fixed;right:16px;bottom:16px;z-index:6;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.float svg{width:30px;height:30px}
+@media(max-width:880px){.hero .wrap,.book .wrap,.two{grid-template-columns:minmax(0,1fr)}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.grid3{grid-template-columns:minmax(0,1fr)}.row2{grid-template-columns:minmax(0,1fr)}.links{order:3;width:100%;margin-left:0;overflow-x:auto;flex-wrap:nowrap}.links a{flex:none}nav .btn{margin-left:auto;min-height:44px;padding:0 16px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#topo"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 6c-3-3-11-3-11 5 0 5 2 8 3 13 .5 3 3 3 3.5 0l1.5-6c.5-2 5.5-2 6 0l1.5 6c.5 3 3 3 3.5 0 1-5 3-8 3-13 0-8-8-8-11-5Z" fill="#ff6b57"/></svg>Sorriso Prime</a>
+  <div class="links"><a href="#tratamentos">Tratamentos</a><a href="#agendar">Agendar</a><a href="#equipe">Equipe</a><a href="#duvidas">Dúvidas</a></div>
+  <a class="btn" href="#agendar">Agendar</a>
+</div></nav>
+
+<header class="band hero" id="topo"><div class="wrap">
+  <div>
+    <h1>Sorria sem medo. A gente cuida de cada detalhe.</h1>
+    <p>Odontologia completa para toda a família, com atendimento sem pressa, anestesia confortável e plano de tratamento explicado antes de começar.</p>
+    <div class="cta"><a class="btn" href="#agendar">Agendar avaliação</a><a class="btn ghost" href="#tratamentos">Ver tratamentos</a></div>
+    <div class="trust"><span><b>12 anos</b>de clínica</span><span><b>6</b>especialidades</span><span><b>Seg a sáb</b>com horário à noite</span></div>
+  </div>
+  <svg class="scene" viewBox="0 0 480 400" role="img" aria-label="Dente brilhante com escova e fio dental">
+    <defs>
+      <linearGradient id="tooth" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dbe8f5"/></linearGradient>
+      <linearGradient id="brush" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff6b57"/><stop offset="1" stop-color="#e2513e"/></linearGradient>
+    </defs>
+    <circle cx="240" cy="200" r="170" fill="#0d3b66"/>
+    <circle cx="240" cy="200" r="170" fill="none" stroke="#7fb3e8" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 10"/>
+    <ellipse cx="240" cy="350" rx="110" ry="14" fill="#061f38" opacity=".5"/>
+    <!-- dente -->
+    <path d="M240 98c-30-26-120-30-120 56 0 50 22 86 32 140 6 32 34 34 40 2l14-62c5-22 63-22 68 0l14 62c6 32 34 30 40-2 10-54 32-90 32-140 0-86-90-82-120-56Z" fill="url(#tooth)"/>
+    <path d="M240 98c-30-26-120-30-120 56 0 50 22 86 32 140" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+    <path d="M150 130c8-22 32-30 52-24" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M300 150c14 40 6 90-8 140" fill="none" stroke="#b9cde2" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+    <!-- brilhos -->
+    <path class="spark" d="M346 96l6 16 16 6-16 6-6 16-6-16-16-6 16-6Z" fill="#ffffff"/>
+    <path class="spark" d="M120 236l4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" fill="#ffffff"/>
+    <path class="spark" d="M372 236l5 12 12 5-12 5-5 12-5-12-12-5 12-5Z" fill="#ffd2cb"/>
+    <!-- escova -->
+    <g transform="rotate(-32 360 300)">
+      <rect x="300" y="292" width="150" height="18" rx="9" fill="url(#brush)"/>
+      <rect x="300" y="276" width="44" height="16" rx="3" fill="#ffffff"/>
+      <g stroke="#7fb3e8" stroke-width="3"><path d="M306 276v-12M314 276v-14M322 276v-12M330 276v-14M338 276v-12"/></g>
+      <rect x="420" y="296" width="20" height="10" rx="5" fill="#ffffff" opacity=".4"/>
+    </g>
+    <!-- fio -->
+    <path d="M70 120c40 20 30 70 70 90" fill="none" stroke="#ffffff" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round" opacity=".7"/>
+  </svg>
+</div></header>
+
+<section class="band" id="tratamentos"><div class="wrap">
+  <h2>Tratamentos</h2>
+  <p class="lead">Do check-up ao sorriso novo, tudo no mesmo lugar e com o mesmo time acompanhando você.</p>
+  <div class="grid3" id="trat"></div>
+</div></section>
+
+<section class="band book" id="agendar"><div class="wrap">
+  <div>
+    <h2>Agende sua avaliação</h2>
+    <p class="lead">Na primeira consulta o dentista examina, explica o que precisa ser feito e mostra as opções. Você decide com calma.</p>
+    <ul><li>Confirmação pelo WhatsApp em poucos minutos</li><li>Atendemos particular e os principais convênios</li><li>Horários até 20h e aos sábados</li></ul>
+  </div>
+  <div>
+    <form id="form" novalidate>
+      <label>Seu nome<input id="nome" autocomplete="name" placeholder="Nome completo"></label>
+      <label>O que você procura?<select id="trat2"></select></label>
+      <div><label style="margin-bottom:8px">Atendimento</label><div class="chips" id="tipo"><button type="button" aria-pressed="true">Particular</button><button type="button" aria-pressed="false">Convênio</button></div></div>
+      <label id="lConv" hidden>Qual convênio?<select id="conv"></select></label>
+      <div class="row2"><label>Dia preferido<input id="dia" type="date"></label><label>Período<select id="per"><option>Manhã</option><option>Tarde</option><option>Noite (até 20h)</option></select></label></div>
+      <p class="err" id="err"></p>
+      <button class="btn" type="submit">Continuar no WhatsApp</button>
+    </form>
+    <div class="done" id="done"><h2 style="font-size:28px">Tudo certo!</h2><p id="resumo"></p><div class="cta"><a class="btn" id="wa" href="#">Enviar no WhatsApp</a><button class="btn ghost" id="voltar" type="button" style="color:#0d2540;border-color:#d9e4f0">Alterar</button></div></div>
+  </div>
+</div></section>
+
+<section class="band" id="equipe"><div class="wrap">
+  <h2>Nossa equipe</h2>
+  <p class="lead">Especialistas que trabalham juntos no seu caso.</p>
+  <div class="grid3 team" id="team"></div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap">
+  <h2>Convênios aceitos</h2>
+  <p class="lead">Não achou o seu? Pergunte no WhatsApp.</p>
+  <div class="plans" id="plans"></div>
+</div></section>
+
+<section class="band" id="duvidas" style="padding-top:0"><div class="wrap two">
+  <div><h2>Dúvidas frequentes</h2><div id="faq"></div></div>
+  <div class="card"><h3>Horários e endereço</h3><ul class="hours" id="hours" style="margin:12px 0 18px"></ul><p>Rua Sete de Setembro, 580, sala 12, Centro</p><p>WhatsApp: (11) 97777-7777</p><p><a href="https://www.google.com/maps/search/?api=1&query=Rua+Sete+de+Setembro+580+Centro">Abrir no Google Maps</a></p></div>
+</div></section>
+
+<footer><div class="wrap"><span>© Sorriso Prime Odontologia · Responsável técnica: Dra. Carolina Mendes, CRO 00000</span><span>Site de demonstração: nomes, registros, endereço e contatos são exemplos.</span></div></footer>
+
+<a class="float" href="https://wa.me/5511977777777" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z"/></svg></a>
+
+<script>
+{
+const WHATS = '5511977777777';
+const I = {
+  limp:'<path d="M14 4c-2-2-8-2-8 4 0 4 2 6 2 10 0 2 2 2 2 0l1-4c.4-1.4 5.6-1.4 6 0l1 4c0 2 2 2 2 0 0-4 2-6 2-10 0-6-6-6-8-4Z" fill="none" stroke="#0d3b66" stroke-width="2"/>',
+  clar:'<circle cx="14" cy="14" r="5" fill="#ff6b57"/><path d="M14 2v4M14 22v4M2 14h4M22 14h4M5.5 5.5l3 3M19.5 19.5l3 3M5.5 22.5l3-3M19.5 8.5l3-3" stroke="#0d3b66" stroke-width="2" stroke-linecap="round"/>',
+  orto:'<rect x="3" y="10" width="22" height="8" rx="4" fill="none" stroke="#0d3b66" stroke-width="2"/><path d="M3 14h22" stroke="#ff6b57" stroke-width="2"/><rect x="7" y="12" width="3" height="4" fill="#0d3b66"/><rect x="13" y="12" width="3" height="4" fill="#0d3b66"/><rect x="19" y="12" width="3" height="4" fill="#0d3b66"/>',
+  impl:'<path d="M9 4h10l-1 6H10Z" fill="#ff6b57"/><path d="M11 10h6v3h-6zM11.5 13h5l-.5 3h-4zM12 16h4l-.5 3h-3zM12.5 19h3L14 25Z" fill="none" stroke="#0d3b66" stroke-width="1.8"/>',
+  canal:'<path d="M14 4c-2-2-8-2-8 4 0 4 2 6 2 10 0 2 2 2 2 0l1-4c.4-1.4 5.6-1.4 6 0l1 4c0 2 2 2 2 0 0-4 2-6 2-10 0-6-6-6-8-4Z" fill="none" stroke="#0d3b66" stroke-width="2"/><path d="M12 9v8M16 9v8" stroke="#ff6b57" stroke-width="2"/>',
+  kids:'<circle cx="14" cy="12" r="8" fill="none" stroke="#0d3b66" stroke-width="2"/><circle cx="11" cy="10" r="1.3" fill="#0d3b66"/><circle cx="17" cy="10" r="1.3" fill="#0d3b66"/><path d="M10 14c2 3 6 3 8 0" stroke="#ff6b57" stroke-width="2" fill="none" stroke-linecap="round"/>'
+};
+const trat = [
+  {i:'limp',n:'Limpeza e prevenção',d:'Remoção de tártaro, polimento e flúor. O ideal é a cada 6 meses.'},
+  {i:'clar',n:'Clareamento dental',d:'Em consultório ou caseiro com moldeira, com acompanhamento.'},
+  {i:'orto',n:'Ortodontia',d:'Aparelho fixo, estético ou alinhadores transparentes.'},
+  {i:'impl',n:'Implantes',d:'Repõe dentes perdidos com planejamento por tomografia.'},
+  {i:'canal',n:'Tratamento de canal',d:'Feito com anestesia confortável e localizador apical.'},
+  {i:'kids',n:'Odontopediatria',d:'Primeira consulta das crianças sem choro e sem susto.'}
+];
+const equipe = [
+  {n:'Dra. Carolina Mendes',e:'Clínica geral e estética',c:'CRO 00000'},
+  {n:'Dr. Felipe Andrade',e:'Ortodontia',c:'CRO 00001'},
+  {n:'Dra. Juliana Prado',e:'Implantes e prótese',c:'CRO 00002'}
+];
+const convenios = ['Amil Dental','Bradesco Dental','SulAmérica Odonto','OdontoPrev','Porto Seguro Odonto','Uniodonto'];
+const faq = [
+  ['Dói fazer tratamento?','Usamos anestesia com aplicação lenta e gel anestésico antes da agulha. A maioria dos pacientes relata pouco ou nenhum desconforto.'],
+  ['Quanto custa?','O valor depende do que cada caso precisa. Na avaliação você recebe o plano de tratamento com o orçamento detalhado antes de decidir.'],
+  ['Vocês parcelam?','Sim, aceitamos Pix, débito e parcelamento no cartão. Combine as condições na avaliação.'],
+  ['Atendem urgência?','Sim. Em caso de dor, chame no WhatsApp que encaixamos no mesmo dia sempre que houver horário.'],
+  ['Com que idade levar a criança?','A primeira visita é indicada quando nasce o primeiro dente, ou até 1 ano de idade.']
+];
+const horarios = [[0,'Domingo',null],[1,'Segunda',[8,20]],[2,'Terça',[8,20]],[3,'Quarta',[8,20]],[4,'Quinta',[8,20]],[5,'Sexta',[8,20]],[6,'Sábado',[8,13]]];
+const $ = id => document.getElementById(id);
+
+$('trat').innerHTML = trat.map(t => `<div class="card"><div class="ico"><svg viewBox="0 0 28 28" aria-hidden="true">${I[t.i]}</svg></div><h3>${t.n}</h3><p>${t.d}</p></div>`).join('');
+$('trat2').innerHTML = ['Avaliação geral', ...trat.map(t => t.n), 'Estou com dor (urgência)'].map(n => `<option>${n}</option>`).join('');
+$('team').innerHTML = equipe.map((e,k) => { const ini = e.n.replace(/^Dra?\.\s/,'').split(' ').map(w=>w[0]).join(''); return `<div class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="${['#0d3b66','#ff6b57','#3d6e9e'][k]}"/><text x="32" y="40" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="22" fill="#fff">${ini}</text></svg><div><h3>${e.n}</h3><p style="margin:2px 0 0">${e.e}</p><small>${e.c}</small></div></div>`; }).join('');
+$('plans').innerHTML = convenios.map(c => `<span>${c}</span>`).join('');
+$('conv').innerHTML = convenios.map(c => `<option>${c}</option>`).join('') + '<option>Outro</option>';
+$('faq').innerHTML = faq.map(f => `<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('');
+
+const now = new Date(), today = now.getDay();
+$('hours').innerHTML = [1,2,3,4,5,6,0].map(i => { const h = horarios[i]; return `<li class="${i===today?'today':''}"><span>${h[1]}${i===today?' (hoje)':''}</span><span>${h[2]?h[2][0]+'h às '+h[2][1]+'h':'Fechado'}</span></li>`; }).join('');
+
+const pad = n => String(n).padStart(2,'0');
+const iso = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const dia = $('dia'); dia.min = iso(now);
+const prox = new Date(now); prox.setDate(prox.getDate()+1);
+while (!horarios[prox.getDay()][2]) prox.setDate(prox.getDate()+1);
+dia.value = iso(prox);
+
+let tipo = 'Particular';
+$('tipo').addEventListener('click', e => {
+  const b = e.target.closest('button'); if(!b) return;
+  tipo = b.textContent;
+  [...$('tipo').children].forEach(x => x.setAttribute('aria-pressed', x===b));
+  $('lConv').hidden = tipo !== 'Convênio';
+});
+
+$('form').addEventListener('submit', e => {
+  e.preventDefault();
+  const nome = $('nome').value.trim();
+  if (!nome) { $('err').textContent = 'Digite seu nome.'; $('nome').focus(); return; }
+  if (!dia.value) { $('err').textContent = 'Escolha um dia.'; return; }
+  const d = new Date(dia.value + 'T12:00');
+  if (!horarios[d.getDay()][2]) { $('err').textContent = 'Não atendemos aos domingos. Escolha outro dia.'; return; }
+  if ($('per').value.startsWith('Noite') && d.getDay()===6) { $('err').textContent = 'Aos sábados atendemos só pela manhã.'; return; }
+  $('err').textContent = '';
+  const data = d.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'2-digit'});
+  const msg = `Olá! Sou ${nome} e gostaria de agendar: ${$('trat2').value}. Atendimento: ${tipo}${tipo==='Convênio'?' ('+$('conv').value+')':''}. Preferência: ${data}, período da ${$('per').value.toLowerCase().replace(' (até 20h)','')}.`;
+  $('resumo').textContent = msg;
+  $('wa').href = `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`;
+  $('form').style.display = 'none'; $('done').classList.add('show'); $('wa').focus();
+});
+$('voltar').addEventListener('click', () => { $('done').classList.remove('show'); $('form').style.display = ''; });
+}
+</script>
+</body>
+</html>
